@@ -21,15 +21,18 @@ class PlayerListing extends Component {
   }
 
   render() {
+    
     const renderPlayer = this.props.playerList.map((player, index) =>
       <SinglePlayer key={index} player={player} />
     );
+
+    let totalPlayer = this.props.playerList.length;
 
     return (
       <div style={style.container}>
         <div>
           <h3>List of all players</h3>
-          <p> Sort by <span>
+          <p>The total number of players is: {totalPlayer}. Sort by <span>
               <select>
                 <option>Name</option>
                 <option>Age</option>
