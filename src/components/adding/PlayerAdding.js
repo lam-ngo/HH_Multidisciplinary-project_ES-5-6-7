@@ -42,6 +42,7 @@ class PlayerAdding extends Component {
   addHandle = (e) => {
     e.preventDefault();
     this.props.actionHandle('PLAYER_ADD', 0, this.state);
+    console.log(`Add new player: ${this.state.name}, ${this.state.age}, ${this.state.score}`);
     this.setState({
       name: '',
       age: 0,

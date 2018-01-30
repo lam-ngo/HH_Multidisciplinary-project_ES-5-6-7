@@ -40,7 +40,7 @@ class App extends Component {
         break;
       case 'PLAYER_DELETE':
         console.log(`PLAYER_DELETE index ${index}`);
-        this.setState({ playerList: [ ...this.state.slice(0,index), ...this.state.slice(index+1)] });
+        this.setState({ playerList: [ ...this.state.playerList.slice(0,index), ...this.state.playerList.slice(index+1)] });
         break;
       default:
         break;

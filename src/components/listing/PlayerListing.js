@@ -21,9 +21,9 @@ class PlayerListing extends Component {
   }
 
   render() {
-    
+
     const renderPlayer = this.props.playerList.map((player, index) =>
-      <SinglePlayer key={index} player={player} />
+      <SinglePlayer key={index} player={player} deleteHandle={() => this.deleteHandle(index)}/>
     );
 
     let totalPlayer = this.props.playerList.length;
@@ -57,15 +57,20 @@ class PlayerListing extends Component {
       </div>
     );
   }
+
+  deleteHandle = (index) => {
+    console.log(`Delete player at index ${index}`);
+    this.props.actionHandle('PLAYER_DELETE', index);
+  }
 }
 
-const SinglePlayer = ({ player }) =>
+const SinglePlayer = ({ player, deleteHandle }) =>
   <tr>
     <td style={style.textAlign}>{player.name}</td>
     <td>{player.age}</td>
     <td>{player.score}</td>
     <td>
-      <button onClick={()=>console.log("Delete!")}>DELETE</button>
+      <button onClick={() => deleteHandle()}>DELETE</button>
     </td>
   </tr>
 ;
