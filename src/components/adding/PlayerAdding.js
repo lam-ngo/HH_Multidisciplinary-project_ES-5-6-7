@@ -41,6 +41,7 @@ class PlayerAdding extends Component {
   //HANDLE SUBMIT ADD FORM
   addHandle = (e) => {
     e.preventDefault();
+    this.props.actionHandle('PLAYER_ADD', 0, this.state);
     this.setState({
       name: '',
       age: 0,
