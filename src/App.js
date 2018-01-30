@@ -6,7 +6,8 @@ import './App.css';
 import playerList from './data/Data';
 
 //IMPORT COMPONENTS
-import PlayerListing from './components/listing/PlayerListing.jsx';
+import PlayerListing from './components/listing/PlayerListing.js';
+import PlayerAdding from './components/adding/PlayerAdding.js';
 
 class App extends Component {
   render() {
@@ -17,7 +18,7 @@ class App extends Component {
           <h1 className="App-title">This is a player app using React and ES 5, 6, 7 features</h1>
         </header>
 
-        <h3>Add new player</h3>
+        <PlayerAdding />
         <PlayerListing playerList={playerList}/>
       </div>
     );
